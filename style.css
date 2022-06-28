@@ -1,0 +1,155 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+
+  padding-top: 100px;
+
+  font-family: sans-serif;
+}
+
+.boards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 80px;
+}
+
+.board {
+  background-color: #e7e7e7;
+  padding: 14px 12px;
+  border-radius: 12px;
+
+  min-width: 420px;
+}
+
+.row {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.board .duplicate-button,
+.board .delete-button {
+  all: unset;
+  cursor: pointer;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 4px 12px;
+}
+
+.board .duplicate-button {
+  background-color: #477fd4;
+  color: #fff;
+}
+
+.board .delete-button {
+  background-color: #df4747;
+  color: #fff;
+}
+
+.board ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  list-style: none;
+  padding-left: 0px;
+}
+
+.board .board-title {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.task {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.task.completed {
+  background-color: #a7a6a6;
+}
+
+.task:not(.completed):hover,
+.task:not(.completed) .task-name:hover {
+  background-color: #cfcfcf;
+}
+
+.task.completed .task-name {
+  text-decoration: line-through;
+}
+
+.task .task-name {
+  cursor: pointer;
+  width: 100%;
+
+  margin-right: 12px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.task .delete-button {
+  all: unset;
+
+  font-size: 12px;
+  font-weight: bold;
+
+  box-sizing: border-box;
+  background-color: #df4747;
+  color: #fff;
+  border-radius: 0px 8px 8px 0px;
+  padding: 4px 12px 4px;
+}
+
+.delete-button:hover {
+  background-color: hsl(0, 70%, 40%);
+}
+
+.board .new-task-input {
+  all: unset;
+
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+
+  font-size: 14px;
+
+  background-color: #fff;
+  border: 1px solid #dedede;
+  border-radius: 8px;
+  padding: 12px 8px;
+}
+
+.new-board-input {
+  all: unset;
+
+  box-sizing: border-box;
+  display: block;
+  width: 300px;
+  margin-bottom: 30px;
+
+  font-size: 14px;
+
+  background-color: #fff;
+  border: 1px solid #dedede;
+  border-radius: 8px;
+  padding: 12px 8px;
+}
