@@ -1,3 +1,15 @@
+class Boards {
+  renderizarBoards(boards) {
+    const boardsContainer = document.querySelector(".boards");
+
+    boards.forEach((board) => {
+      const boardContainer = getBoardView(board);
+
+      boardsContainer.appendChild(boardContainer);
+    });
+  }
+}
+
 function onDuplicateBoard(board) {
   const boardsContainer = document.querySelector(".boards");
   const newBoard = structuredClone(board);
@@ -192,30 +204,9 @@ function getBoardView(board) {
   return boardContainer;
 }
 
-const boardPessoal = {
-  id: 1,
-  title: "Title",
-  tasks: [
-    { id: 1, name: "tarefa 1", completed: false },
-    { id: 2, name: "tarefa 2", completed: false },
-    { id: 3, name: "tarefa 3", completed: true },
-    { id: 4, name: "tarefa 4", completed: false },
-    { id: 5, name: "tarefa 5", completed: true },
-  ],
-};
+let boards = [];
 
-let boards = [boardPessoal];
-
-function renderizarBoards(boards) {
-  const boardsContainer = document.querySelector(".boards");
-
-  boards.forEach((board) => {
-    const boardContainer = getBoardView(board);
-
-    boardsContainer.appendChild(boardContainer);
-  });
-}
-renderizarBoards(boards);
+new Boards(boards);
 
 const newBoardInput = document.querySelector(".new-board-input");
 newBoardInput.addEventListener("keypress", handleNewBoardInputKeypress);
